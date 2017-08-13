@@ -43,7 +43,7 @@ def walkJSONobj(dic, key):
 def main():
     '''
     @param argv[1]: JSON formatted input string
-    @param argv[2]: slashed keys path inquiry
+    @param argv[2]: JSON key inquiry
     '''
     #json_data = str(sys.argv[1])
     #key = str(sys.argv[2])
