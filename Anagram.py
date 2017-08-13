@@ -4,7 +4,8 @@ Created on Jul 7, 2017
 @author: Karim Hammouda
 '''
 
-def anagram_solution3(s1,s2):
+#solution1 based on building alphabatical histogram (All letters) => O(n)
+def anagram_solution1(s1,s2):
     c1 = [0] * 26
     c2 = [0] * 26
     for i in range(len(s1)):
@@ -22,6 +23,23 @@ def anagram_solution3(s1,s2):
             still_ok = False
     return still_ok
 
+#solution2 based on sorting and comparing the 2 words => O(n) expensive sort()
+def anagram_solution2(s1,s2):
+    a_list1 = list(s1)
+    a_list2 = list(s2)
+    a_list1.sort()
+    a_list2.sort()
+    pos = 0
+    matches = True
+    while pos < len(s1) and matches:
+        if a_list1[pos] == a_list2[pos]:
+            pos = pos + 1
+        else:
+            matches = False
+    return matches
+    
+
+#my solution combining solution1 and solution2 using dictionary histogram (not all latters) => O(n) replacing sort with dict search O(1)
 def anagram_solutionkiki(word1,word2):
 
     if len(word1) != len(word2):
@@ -41,21 +59,6 @@ def anagram_solutionkiki(word1,word2):
             if histogram1[key] != histogram2.get(key, 0):
                 return False
         return True
-
-def anagram_solution2(s1,s2):
-    a_list1 = list(s1)
-    a_list2 = list(s2)
-    a_list1.sort()
-    a_list2.sort()
-    pos = 0
-    matches = True
-    while pos < len(s1) and matches:
-        if a_list1[pos] == a_list2[pos]:
-            pos = pos + 1
-        else:
-            matches = False
-    return matches
-    
 
 def main():
 
