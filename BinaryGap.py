@@ -18,8 +18,7 @@ def solution(N):
         
         #End state: right hand one => calculate results
         if(dig == '1' and start_counting):
-            if (counter >  max_binary_gap):
-                max_binary_gap = counter
+            max_binary_gap = max(counter, max_binary_gap)
             counter = 0;
         
         #Start state: left hand one => initialize counting
