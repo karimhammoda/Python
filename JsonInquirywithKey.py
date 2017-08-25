@@ -3,8 +3,6 @@ Created on Sep 26, 2016
 
 @author: Karim Hammouda
 
-@copyright: Karim Hammouda
-
 @version: version 2.0
 
 @summary: JSON Inquiry script to traverse JSON formated input string json_data 
