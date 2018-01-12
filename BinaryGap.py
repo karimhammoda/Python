@@ -25,7 +25,7 @@ def solution(N):
         elif(dig == '1' and not start_counting):
             start_counting = True
             
-        #Intermediate state: in-between zeros => counting
+        #Intermediate state: inner zeros => counting
         elif(dig == '0' and start_counting):
                 counter +=1
     
